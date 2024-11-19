@@ -1,26 +1,23 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import jsonData from "./receipt1.json"
+import Item from "./Item";
 
-function App() {
+function App()
+{
+  var receipt = jsonData.receipt;
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    {
+      receipt.map(item => <Item item = {item}></Item>)
+    }
+
+    </>
   );
+
 }
+
+
 
 export default App;
